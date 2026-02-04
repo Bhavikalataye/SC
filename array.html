@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let n = Number(prompt("Enter array size:"));
+    let arr = [];
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt("Enter element " + (i + 1));
+    }
+
+    alert("Array initialized: [" + arr.join(", ") + "]");
+
+    let exit = false;
+
+    while (!exit) {
+        
+        let choice = prompt(
+            "Choose an array method:\n" +
+            "1. push\n2. pop\n3. unshift\n4. shift\n5. length\n6. indexOf\n7. join\n8. forEach\n9. concat\n0. Exit"
+        );
+
+        switch(choice) {
+            case "1": 
+                let valPush = prompt("Enter element to push:");
+                arr.push(valPush);
+                alert("After push: [" + arr.join(", ") + "]");
+                break;
+
+            case "2": 
+                let popped = arr.pop();
+                alert("After pop: [" + arr.join(", ") + "] (Popped element: " + popped + ")");
+                break;
+
+            case "3": 
+                let valUnshift = prompt("Enter element to unshift:");
+                arr.unshift(valUnshift);
+                alert("After unshift: [" + arr.join(", ") + "]");
+                break;
+
+            case "4": 
+                let shifted = arr.shift();
+                alert("After shift: [" + arr.join(", ") + "] (Shifted element: " + shifted + ")");
+                break;
+
+            case "5": 
+                alert("Length of array: " + arr.length);
+                break;
+
+            case "6": 
+                let valIndex = prompt("Enter element to find index:");
+                let index = arr.indexOf(valIndex);
+                if(index !== -1) {
+                    alert("Index of '" + valIndex + "': " + index);
+                } else {
+                    alert("Element '" + valIndex + "' not found in array.");
+                }
+                break;
+
+            case "7": 
+                alert("After join(): " + arr.join(" - "));
+                break;
+
+            case "8": 
+                let msg = "Array elements:\n";
+                arr.forEach((v,i) => msg += "Index " + i + ": " + v + "\n");
+                alert(msg);
+                break;
+
+            case "9": 
+                let arr2 = prompt("Enter elements to concat separated by commas:").split(",");
+                arr = arr.concat(arr2.map(e => e.trim()));
+                alert("After concat: [" + arr.join(", ") + "]");
+                break;
+
+            case "0": 
+                exit = true;
+                break;
+
+            default:
+                alert("Invalid choice! Please select again.");
+        }
+    }
+
+    document.write("<h3>Final Array:</h3> [" + arr.join(", ") + "]");
+</script>
+
+</body>
+</html>
