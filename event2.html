@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Event</title>
+</head>
+<body>
+
+<button 
+    onmouseover="showMsg()" 
+    onmouseout="hideMsg()">
+    Move Mouse Over button
+</button>
+<p id="msg"></p>
+<script>
+    function showMsg() {
+        document.getElementById("msg").innerHTML =
+            "Mouse is moved over the button";
+    }
+
+    function hideMsg() {
+        document.getElementById("msg").innerHTML = "";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Account</title>
+</head>
+<body>
+
+<script>
+    class BankAccount {
+        constructor(accountNo, holderName, balance) {
+            this.accountNo = accountNo;
+            this.holderName = holderName;
+            this.balance = balance;
+        }
+
+        deposit(amount) {
+            this.balance += amount;
+        }
+
+        withdraw(amount) {
+            if (amount <= this.balance) {
+                this.balance -= amount;
+            } else {
+                document.write("<br>Insufficient Balance");
+            }
+        }
+
+        display() {
+            document.write("<br><b>Account Number:</b> " + this.accountNo);
+            document.write("<br><b>Holder Name:</b> " + this.holderName);
+            document.write("<br><b>Balance:</b> ₹" + this.balance);
+        }
+    }
+
+    let acc = new BankAccount(101, "Rahul", 5000);
+
+    document.write("<b>Initial Details</b>");
+    acc.display();
+
+    
+    let dep = parseInt(prompt("Enter amount to deposit:"));
+    acc.deposit(dep);
+
+    let wit = parseInt(prompt("Enter amount to withdraw:"));
+    acc.withdraw(wit);
+
+    document.write("<br><br><b>Updated Details</b>");
+    acc.display();
+</script>
+
+</body>
+</html>

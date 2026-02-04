@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill</title>
+</head>
+<body>
+
+<script>
+    let units = parseInt(prompt("Enter electricity units:"));
+    let bill = 0;
+
+    if (units <= 50) {
+        bill = units * 3;
+    } 
+    else if (units <= 150) {
+        bill = (50 * 3) + ((units - 50) * 5);
+    } 
+    else {
+        bill = (50 * 3) + (100 * 5) + ((units - 150) * 7);
+    }
+
+    document.write("Electricity Units: " + units + "<br>");
+    document.write("Total Bill Amount: ₹" + bill);
+</script>
+
+</body>
+</html>

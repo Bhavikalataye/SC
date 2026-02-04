@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function fibonacci(){
+    let n=parseInt(prompt("Enter number:"));
+    let a=0,b=1,c;
+
+    console.log(a);
+    console.log(b);
+
+    while(true) {
+        c=a+b;
+        if(c>n) {
+            break;
+        }
+        console.log(c);
+        a=b;
+        b=c;
+    }
+}
+fibonacci();
+    </script>
+</body>
+</html>
