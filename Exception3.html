@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Validation</title>
+    <script>
+        function checkAge() {
+            let age = parseInt(document.getElementById("age").value);
+            let message = document.getElementById("message");
+
+            try {
+                if (isNaN(age)) {
+                    throw "Please enter a valid age!";
+                }
+
+                if (age < 18) {
+                    throw "Exception: You must be at least 18 years old!";
+                }
+
+                message.innerHTML = "Access Granted!";
+            }
+            catch (error) {
+                message.innerHTML = error;
+            }
+            finally {
+                console.log("Age verification completed.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Age Verification</h2>
+
+    <label>Enter Your Age:</label>
+    <input type="text" id="age"><br><br>
+
+    <button onclick="checkAge()">Submit</button>
+
+    <h3 id="message"></h3>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Username Validation</title>
+
+    <script>
+        function validateUsername() {
+            let username = document.getElementById("username").value;
+            let message = document.getElementById("message");
+
+            try {
+                if (username.trim() === "") {
+                    throw "Username cannot be empty!";
+                }
+
+                if (username.length < 4) {
+                    throw "Username must be at least 4 characters long!";
+                }
+
+                message.style.color = "green";
+                message.innerHTML = " Welcome, <b>" + username + "</b>!";
+            }
+            catch (error) {
+                message.style.color = "red";
+                message.innerHTML = " " + error;
+            }
+            finally {
+                console.log("Validation completed.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Username Validation</h2>
+
+    <label>Enter Username:</label>
+    <input type="text" id="username"><br><br>
+
+    <button onclick="validateUsername()">Submit</button>
+
+    <h3 id="message"></h3>
+
+</body>
+</html>

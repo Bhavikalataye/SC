@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Size</title>
+</head>
+<body>
+
+  <h2> Browser window Size</h2>
+  <p id="size"></p>
+
+  <script>
+    function showSize() {
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+
+      document.getElementById("size").innerHTML =
+        "Width: " + width + "px , Height: " + height + "px";
+    }
+
+   
+    window.onresize = showSize;
+
+
+    showSize();
+  </script>
+
+</body>
+</html>

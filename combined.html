@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Easy Combined Program</title>
+</head>
+<body>
+
+<h2>Loops + Control Statements</h2>
+<div id="result"></div>
+
+<script>
+
+
+let number = parseInt(prompt("Enter a number:"));
+let output = "";
+
+
+if (number % 2 == 0) {
+    output += "Number is Even<br>";
+} else {
+    output += "Number is Odd<br>";
+}
+
+
+if (number >= 80) {
+    output += "Grade A<br>";
+} else if (number >= 50) {
+    output += "Grade B<br>";
+} else {
+    output += "Grade C<br>";
+}
+
+
+let choice = prompt("Enter 1 or 2:");
+
+switch(choice) {
+    case "1":
+        output += "You selected One<br>";
+        break;
+    case "2":
+        output += "You selected Two<br>";
+        break;
+    default:
+        output += "Invalid Choice<br>";
+}
+
+
+output += "<br><b>FOR LOOP</b><br>";
+for (let i = 1; i <= 5; i++) {
+    output += i + "<br>";
+}
+
+
+output += "<br><b>WHILE LOOP</b><br>";
+let i = 5;
+while (i >= 1) {
+    output += i + "<br>";
+    i--;
+}
+
+
+output += "<br><b>DO-WHILE LOOP</b><br>";
+let num = 2;
+do {
+    output += num + "<br>";
+    num += 2;
+} while (num <= 10);
+
+
+output += "<br><b>FOREACH LOOP</b><br>";
+let names = ["Vaishnavi", "Anjali"];
+
+names.forEach(function(name) {
+    output += name + "<br>";
+});
+
+document.getElementById("result").innerHTML = output;
+
+</script>
+
+</body>
+</html>

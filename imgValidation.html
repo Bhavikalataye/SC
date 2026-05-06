@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation Example</title>
+</head>
+<body>
+
+<h2>Num & Img validtion</h2>
+
+<form id="myForm">
+    <label>Enter Number:</label><br>
+    <input type="text" id="number"><br><br>
+
+    <label>Select Image:</label><br>
+    <input type="file" id="image"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<p id="result"></p>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();  
+
+    let num = document.getElementById("number").value.trim();
+    let imgFile = document.getElementById("image").files;
+    let output = document.getElementById("result");
+
+    if (num === "" || isNaN(num)) {
+        output.innerHTML = "❌ Invalid number entered.";
+        return;
+    }
+
+    if (imgFile.length === 0) {
+        output.innerHTML = "❌ No image selected.";
+        return;
+    }
+
+    output.innerHTML = "✅ Form submitted successfully!";
+});
+</script>
+
+</body>
+</html>

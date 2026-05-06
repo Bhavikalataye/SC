@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Field Hover Message</title>
+</head>
+<body>
+
+ 
+
+  <input type="text" id="myInput" placeholder="Move your cursor here">
+  <p id="msg"></p>
+
+  <script>
+    const inputField = document.getElementById("myInput");
+    const msg = document.getElementById("msg");
+
+    
+    inputField.addEventListener("mouseenter", function() {
+      msg.innerHTML = "Cursor entered the input field!";
+    });
+
+    
+    inputField.addEventListener("mouseleave", function() {
+      msg.innerHTML = "Cursor left the input field!";
+    });
+  </script>
+
+</body>
+</html>

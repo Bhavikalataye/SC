@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Change Alert</title>
+</head>
+<body>
+
+  <h2>Select a Fruit</h2>
+
+  <select id="fruits">
+    <option value="">--Select--</option>
+    <option value="Apple">Apple</option>
+    <option value="Banana">Banana</option>
+    <option value="Orange">Orange</option>
+    <option value="Mango">Mango</option>
+  </select>
+
+  <p id="msg"></p>
+
+  <script>
+    const dropdown = document.getElementById("fruits");
+    const msg = document.getElementById("msg");
+
+    dropdown.addEventListener("change", function() {
+      const selected = dropdown.value;
+
+      
+      msg.innerHTML = "You selected: " + selected;
+
+      
+      if(selected !== "") { 
+        alert("You selected: " + selected);
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exception Handling Example</title>
+
+    <script>
+        function divideNumbers() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let resultBox = document.getElementById("result");
+
+            try {
+                if (isNaN(num1) || isNaN(num2)) {
+                    throw "Please enter valid numbers!";
+                }
+
+                if (num2 === 0) {
+                    throw "Division by zero is not allowed!";
+                }
+
+                let result = num1 / num2;
+
+                resultBox.style.color = "green";
+                resultBox.innerHTML =
+                    "<b>First Number:</b> " + num1 + "<br>" +
+                    "<b>Second Number:</b> " + num2 + "<br>" +
+                    "<b>Result:</b> " + result;
+            }
+            catch (error) {
+                resultBox.style.color = "red";
+                resultBox.innerHTML = "<b>Error:</b> " + error;
+            }
+            finally {
+                console.log("Division operation attempted.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Division Using Exception Handling</h2>
+
+    <label>Enter First Number:</label>
+    <input type="text" id="num1"><br><br>
+
+    <label>Enter Second Number:</label>
+    <input type="text" id="num2"><br><br>
+
+    <button onclick="divideNumbers()">Divide</button>
+
+    <h3 id="result"></h3>
+
+</body>
+</html>

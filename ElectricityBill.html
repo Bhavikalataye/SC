@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill Calculator</title>
+</head>
+<body>
+
+<h3>Electricity Bill Calculator</h3>
+
+<script>
+    
+    let units = Number(prompt("Enter electricity units consumed:"));
+    let bill = 0;
+
+    
+    if (units <= 100) {
+        bill = units * 1;
+    } else if (units <= 200) {
+        bill = units * 2;
+    } else if (units <= 300) {
+        bill = units * 3;
+    } else {
+        bill = units * 4; 
+    }
+
+   
+    document.write("<b>Units Consumed:</b> " + units + "<br>");
+    document.write("<b>Total Bill:</b> ₹" + bill);
+</script>
+
+</body>
+</html>

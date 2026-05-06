@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #count {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Type something:</h2>
+  <textarea id="textInput" rows="5" cols="40"></textarea>
+
+  <div id="count">Characters: 0</div>
+
+  <script>
+    const textInput = document.getElementById("textInput");
+    const countDisplay = document.getElementById("count");
+
+    textInput.addEventListener("input", function () {
+      const charCount = textInput.value.length;
+      countDisplay.textContent = "Characters: " + charCount;
+    });
+  </script>
+
+</body>
+</html>

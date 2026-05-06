@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll Message</title>
+  <style>
+    body {
+      height: 2000px; 
+      font-family: Arial, sans-serif;
+    }
+    #msg {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: yellow;
+      padding: 10px;
+      border: 1px solid black;
+      display: none; 
+    }
+  </style>
+</head>
+<body>
+
+  <div id="msg">You are scrolling the page!</div>
+
+  <script>
+    window.onscroll = function() {
+      let message = document.getElementById("msg");
+      message.style.display = "block"; 
+    };
+  </script>
+
+  <p>Scroll down....</p>
+
+</body>
+</html>

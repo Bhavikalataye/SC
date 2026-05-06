@@ -1,0 +1,73 @@
+  <!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Control Statements</title>
+</head>
+<body>
+
+<h2>Control Statements Program</h2>
+<div id="result"></div>
+
+<script>
+
+
+let marks = parseInt(prompt("Enter your marks:"));
+let output = "";
+
+
+if (marks >= 0 && marks <= 100) {
+    output += "Valid Marks<br>";
+}
+
+
+if (marks % 2 === 0) {
+    output += "Marks is Even<br>";
+} else {
+    output += "Marks is Odd<br>";
+}
+
+
+if (marks >= 90) {
+    output += "Grade: A<br>";
+} else if (marks >= 75) {
+    output += "Grade: B<br>";
+} else if (marks >= 50) {
+    output += "Grade: C<br>";
+} else {
+    output += "Grade: Fail<br>";
+}
+
+
+let grade;
+
+if (marks >= 90) {
+    grade = "A";
+} else if (marks >= 75) {
+    grade = "B";
+} else if (marks >= 50) {
+    grade = "C";
+} else {
+    grade = "F";
+}
+
+switch (grade) {
+    case "A":
+        output += "Excellent Performance<br>";
+        break;
+    case "B":
+        output += "Very Good Performance<br>";
+        break;
+    case "C":
+        output += "Good Performance<br>";
+        break;
+    default:
+        output += "Needs Improvement<br>";
+}
+
+document.getElementById("result").innerHTML = output;
+
+</script>
+
+</body>
+</html>
+
